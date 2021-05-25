@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-enf-file
+  namespace: kuard
+data:
+  STAGE: DEV
+  ID: aliens
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-enf-file-2
+  namespace: kuard
+data:
+  URL: kiwi.com
+  NAME: george

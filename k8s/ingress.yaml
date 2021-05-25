@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: "global-appserver-ip"
+  name: kuard-ingress
+  namespace: kuard
+spec:
+  rules:
+    - host: hello.35.186.229.102.nip.io
+      http:
+        paths:
+          - backend:
+              serviceName: kuard
+              servicePort: 80
+    - host: hello-canary.35.186.229.102.nip.io
+      http:
+        paths:
+          - backend:
+              serviceName: kuard-canary
+              servicePort: 80
+
